@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --color-header: #f4efec;
+    --color-title: #950741;
+    --color-text: #fefefe;
+    --color-img: #c3083f;
+    --color-text-alt: #6f2232;
+    --color-background: #1a1a1c;
+    --gallery-gap: calc(var(--index) * 7.5)
+}
+
+@font-face {
+    font-family: dead;
+    src: url("./fonts/Sehnsucht Font/Sehnsucht Font.ttf");
+}
+
+@font-face {
+    font-family: main;
+    src: url("./fonts/Sweet Mavka Script.ttf");
+}
+
+@font-face {
+    font-family: keykaps;
+    src: url("./fonts/a_oldtypernr.ttf");
+}
+
+@font-face {
+    font-family: logitech;
+    src: url("./fonts/SofiaProSemiBold.ttf");
+}
+
+.bg__video,
+.main__title {
+    will-change: transform;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+}
+
+header {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    width: 80%;
+    margin: 4vh auto 0;
+}
+
+.flex>* {
+    margin: 10vh 0;
+    padding: 0 4vh;
+    flex: 1;
+}
+
+@media (max-width: 1600px) {
+    .bg__video {
+        width: auto;
+        height: 100vh;
+    }
+}
+
+.bg__video {
+    width: 100vw;
+    z-index: -1;
+}
+
+.main__title {
+    font-family: main;
+    position: absolute;
+    color: var(--color-title);
+    font-size: 10rem;
+    bottom: 25vh;
+    left: 10vw;
+    z-index: 1;
+}
+
+.text {
+    font-size: 2.5rem;
+}
+
+.shine {
+    position: relative;
+}
+
+.img {
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.shine::before {
+    position: absolute;
+    content: '';
+    border-radius: 0.5rem;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: var(--color-img);
+    z-index: -1;
+    filter: blur(1rem);
+    animation: shine infinite 5s;
+}
+
+.title {
+    color: var(--color-title);
+    text-align: center;
+    font-size: 4rem;
+    font-family: main;
+}
+
+@keyframes shine {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sub__title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.ded_inside {
+    font-family: dead;
+    color: var(--color-img);
+    text-shadow: 0.5rem 0.3rem 1rem var(--color-title);
+}
+
+.ded__inside__text {
+    font-family: dead;
+}
+
+.keykaps {
+    font-family: keykaps;
+    color: var(--color-title);
+}
+
+.keykaps__text {
+    font-family: keykaps;
+}
+
+.money__container {
+    width: 80vw;
+    margin: 0 auto 10vh;
+}
+
+.money {
+    width: 60vw;
+    margin: 10vh auto;
+}
+
+.logitech {
+    font-family: logitech;
+    color: var(--color-title);
+}
+
+.money__text {
+    width: 60vw;
+    margin: 0 auto;
+    padding: 0 0 10vh;
+}
+
+footer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    margin: 5vh auto;
+    padding: 10vh 0;
+}
+
+.footer {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    font-size: 3rem;
+    white-space: nowrap;
+    border-right: .15em solid var(--color-img);
+    width: 100%;
+}
+
+.footer__first {
+    animation:
+        typing 6.1s steps(61, end) forwards,
+        blink-caret .5s step-end infinite;
+}
+
+.footer__sleep {
+    width: 0%;
+    border-right: none;
+    animation:
+        typing 1.9s steps(19, end) 6.1s forwards,
+        blink-caret .5s step-end 6.1s infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0%;
+        border-right: .15em solid var(--color-img);
+    }
+
+    99%{
+        width: 100%;
+        border-right: .15em solid var(--color-img);
+    }
+
+    100% {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+@keyframes blink-caret {
+
+    0%,100% {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--color-img)
+    }
+}
+
+/* .some{
+    opacity: 0;
+} */
