@@ -242,6 +242,24 @@ footer {
     }
 }
 
-/* .some{
-    opacity: 0;
-} */
+.comp {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    .footer {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .comp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .wrapper{
+        display: none;
+    }
+}
